@@ -1,1 +1,54 @@
 // стили формы события внутри модального окна
+.create-event {
+  display: flex;
+  flex-direction: column;
+  width: 400px;
+
+  &__close-btn {
+    background-color: inherit;
+    border: none;
+    outline: none;
+    margin-left: auto;
+  }
+  
+}
+
+.event-form {
+  display: flex;
+  flex-direction: column;
+  padding-left: 30px;
+  padding-top: 30px;
+
+  &__field {
+    border: none;
+    outline: none;
+
+    &:focus {
+      border-bottom: 3px solid #1a73e8;
+    }
+
+    &-title {
+      font-size: 20px;
+    }
+  }
+
+  &__time {
+    margin-top: 50px;
+  }
+
+  &__textarea {
+    margin-top: 30px;
+  }
+
+  &__submit-btn {
+    border: none;
+    background-color: #1a73e8;
+    margin-left: auto;
+    margin-top: 30px;
+    padding: 12px 24px;
+    color: #ffffff;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+}
