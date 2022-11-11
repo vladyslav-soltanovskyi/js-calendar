@@ -1,7 +1,10 @@
 // стили отображаемого в календаре события
 .event {
   color: #fff;
-  width: 100px;
+  width: 120px;
   z-index: 5;
   background-color: rgb(3, 155, 229);
+  position: absolute;
+  padding: 10px;
+  border-radius: 5px;
 }

@@ -60,6 +60,15 @@
   display: none;
 }
 
+.delete-event-btn {
+  border: none;
+  outline: none;
+  background: inherit;
+}
+.delete-event-btn__text {
+  margin-left: 15px;
+}
+
 .header {
   display: flex;
   padding-top: 10px;
@@ -170,7 +179,7 @@
   margin-top: 50px;
 }
 .event-form__textarea {
-  margin-top: 30px;
+  margin-top: 50px;
 }
 .event-form__submit-btn {
   border: none;
@@ -186,9 +195,12 @@
 
 .event {
   color: #fff;
-  width: 100px;
+  width: 120px;
   z-index: 5;
   background-color: rgb(3, 155, 229);
+  position: absolute;
+  padding: 10px;
+  border-radius: 5px;
 }
 
 * {

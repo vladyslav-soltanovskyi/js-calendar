@@ -53,3 +53,13 @@
 .hidden {
   display: none;
 }
+
+.delete-event-btn {
+  border: none;
+  outline: none;
+  background: inherit;
+
+  &__text {
+    margin-left: 15px;
+  }
+}

@@ -62,3 +62,12 @@ export const getDisplayedMonth = (date) => {
     ? `${monthsNames[startMonth]} - ${monthsNames[endMonth]} ${startYear}`
     : `${monthsNames[startMonth]} ${startYear} - ${monthsNames[endMonth]} ${endYear}`;
 };
+
+
+export const getDateObj = (date) => ({
+  year: date.getFullYear(),
+  month: date.getMonth(),
+  day: date.getDate(),
+  hours: date.getHours(),
+  minutes: date.getMinutes()
+});
