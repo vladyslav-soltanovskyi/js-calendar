@@ -53,13 +53,13 @@
     <div class="modal hidden overlay">
       <div class="modal__content">
         <div class="create-event">
-          <button class="create-event__close-btn">+</button>
+          <button class="create-event__close-btn"><i class="fa fa-times"></i></button>
           <form class="event-form">
             <input
               type="text"
               name="title"
               placeholder="Title"
-              class="event-form__field"
+              class="event-form__field event-form__field-title"
             />
             <div class="event-form__time">
               <input type="date" name="date" class="event-form__field" />
@@ -70,7 +70,7 @@
             <textarea
               name="description"
               placeholder="Description"
-              class="event-form__field"
+              class="event-form__field event-form__textarea"
             ></textarea>
             <button type="submit" class="event-form__submit-btn">Create</button>
           </form>

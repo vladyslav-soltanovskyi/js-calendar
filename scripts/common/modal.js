@@ -1,6 +1,5 @@
 const modalElem = document.querySelector('.modal');
 const modalContentElem = document.querySelector('.modal__content');
-const createEventCloseBtn = document.querySelector('.create-event__close-btn');
 
 // опишите ф-ции openModal и closeModal
 // модальное окно работает похожим на попап образом
@@ -17,5 +16,3 @@ function onClickInsideModal(event) {
 }
 
 modalContentElem.addEventListener('click', onClickInsideModal);
-modalElem.addEventListener('click', closeModal);
-createEventCloseBtn.addEventListener('click', closeModal);
