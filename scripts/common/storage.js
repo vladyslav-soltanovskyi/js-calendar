@@ -1,28 +1,58 @@
-let storage = {
-  // используется для удаления события
+const storage = {
   eventIdToDelete: null,
-  // хранит дату понедельника той отображаемой недели
   displayedWeekStart: null,
-  // хранит массив всех событий
   events: [],
-  // это все данные, которые вам нужно хранить для работы приложения
-};
+}
 
 export const setItem = (key, value) => {
-  // ф-ция должна устанавливать значения в объект storage
   storage[key] = value;
 };
 
 export const getItem = (key) => {
-  // ф-ция должна возвращать по ключу значения из объекта storage
   return storage[key];
 };
 
-// пример объекта события
-const eventExample = {
-  id: 0.7520027086457333, // id понадобится для работы с событиями
-  title: 'Title',
-  description: 'Some description',
-  start: new Date('2020-03-17T01:10:00.000Z'),
-  end: new Date('2020-03-17T04:30:00.000Z'),
-};
+const getEvents = () => getItem('events');
+
+const getEvent = (eventId) => getItem('events').find(event => event.id === eventId);
+
+const setEvents = (eventsList) => {
+  setItem('events', eventsList);
+}
+
+const createEvent = (eventData) => {
+  setItem('events', [...getItem('events'), eventData]);
+}
+
+const deleteEvent = (eventId) => {
+  setItem('events', getItem('events').filter(event => event.id !== eventId));
+}
+
+const updateEvent = (eventId, eventData) => {
+  setItem('events', getItem('events').map(event => event.id !== eventId ? event : { ...event, ...eventData }));
+}
+
+const getEventIdToDelete = () => getItem('eventIdToDelete');
+
+const setEventIdToDelete = (eventId) => {
+  setItem('eventIdToDelete', eventId);
+}
+
+const getDisplayedWeekStart = () => getItem('displayedWeekStart');
+
+const setDisplayedWeekStart = (date) => {
+  setItem('displayedWeekStart', date);
+}
+
+export default {
+  getEvents,
+  getEvent,
+  setEvents,
+  createEvent,
+  deleteEvent,
+  updateEvent,
+  getEventIdToDelete,
+  setEventIdToDelete,
+  getDisplayedWeekStart,
+  setDisplayedWeekStart
+}

@@ -64,10 +64,14 @@ export const getDisplayedMonth = (date) => {
 };
 
 
-export const getDateObj = (date) => ({
-  year: date.getFullYear(),
-  month: date.getMonth(),
-  day: date.getDate(),
-  hours: date.getHours(),
-  minutes: date.getMinutes()
-});
+export const getDateObj = (date) => {
+  date = new Date(date);
+  
+  return {
+    year: date.getFullYear(),
+    month: date.getMonth(),
+    day: date.getDate(),
+    hours: date.getHours(),
+    minutes: date.getMinutes()
+  }
+}

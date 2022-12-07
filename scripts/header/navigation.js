@@ -1,4 +1,4 @@
-import { getItem, setItem } from '../common/storage.js';
+import storage from '../common/storage.js';
 import { renderWeek } from '../calendar/calendar.js';
 import { renderHeader } from '../calendar/header.js';
 import { getStartOfWeek, getDisplayedMonth } from '../common/time.utils.js';
@@ -9,23 +9,20 @@ const displayedMonthElem = document.querySelector(
 );
 
 function renderCurrentMonth() {
-  // отрисовать месяц, к которому относиться текущая неделя (getDisplayedMonth)
-  // вставить в .navigation__displayed-month
-  displayedMonthElem.innerHTML = getDisplayedMonth(getItem('displayedWeekStart'));
+  displayedMonthElem.innerHTML = getDisplayedMonth(storage.getDisplayedWeekStart());
 }
 
 const onChangeWeek = (event) => {
-  // при переключении недели обновите displayedWeekStart в storage
-  // и перерисуйте все необходимые элементы страницы (renderHeader, renderWeek, renderCurrentMonth)
   const { target } = event;
   const button = target.closest('[data-direction]');
-  const { direction } = button.dataset;
-
-  if (!direction) {
+  
+  if (!button?.dataset.direction) {
     return;
   }
 
-  let date = getStartOfWeek(getItem('displayedWeekStart'));
+  const { direction } = button.dataset;
+
+  let date = getStartOfWeek(storage.getDisplayedWeekStart());
   const dayOfMonth = date.getDate();
   
   switch(direction) {
@@ -43,7 +40,7 @@ const onChangeWeek = (event) => {
     }
   }
   
-  setItem('displayedWeekStart', date);
+  storage.setDisplayedWeekStart(date)
 
   renderWeek();
   renderHeader();
