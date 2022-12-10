@@ -11,6 +11,8 @@ document.addEventListener('DOMContentLoaded', () => {
   // инициализация всех элементов
   renderTimescale();
   storage.setDisplayedWeekStart(getStartOfWeek(new Date()));
+  renderWeek();
+  renderHeader();
   initNavigation();
   initEventForm();
   

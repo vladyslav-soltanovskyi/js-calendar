@@ -2,6 +2,7 @@ import storage from '../common/storage.js';
 import { openPopup, closePopup } from '../common/popup.js';
 import { getDateObj, getStartOfWeek } from '../common/time.utils.js';
 import api from '../common/api.js';
+import { renderTimeLine } from '../calendar/timeLine.js';
 
 const weekElem = document.querySelector('.calendar__week');
 const deleteEventBtn = document.querySelector('.delete-event-btn');
@@ -54,7 +55,8 @@ const getFilteredEvents = () => {
 
 export const renderEvents = () => {
   removeEventsFromCalendar();
-
+  renderTimeLine();
+  
   const filteredEvents = getFilteredEvents();
   
   filteredEvents.forEach(eventItem => {
