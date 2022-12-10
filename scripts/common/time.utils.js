@@ -72,6 +72,7 @@ export const getDateObj = (date) => {
     month: date.getMonth(),
     day: date.getDate(),
     hours: date.getHours(),
-    minutes: date.getMinutes()
+    minutes: date.getMinutes(),
+    seconds: date.getSeconds()
   }
 }

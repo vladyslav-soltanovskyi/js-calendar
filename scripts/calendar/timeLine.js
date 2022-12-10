@@ -1,3 +1,5 @@
+import { getDateObj } from '../common/time.utils.js';
+
 const minute = 1000 * 60;
 let timerId;
 
@@ -16,14 +18,15 @@ const removeTimerForTimeLine = () => {
 
 export const renderTimeLine = () => {
   removeTimerForTimeLine();
-  const currentDate = new Date();
-  const delayForNextRender = minute - (currentDate.getSeconds() * 1000);
+
+  const { minutes, seconds, hours, day } = getDateObj(new Date());
+  const delayForNextRender = minute - (seconds * 1000);
   
   const calendarTimeSlot = document.querySelector(
-    `[data-day="${currentDate.getDate()}"] [data-time="${currentDate.getHours()}"]`
+    `[data-day="${day}"] [data-time="${hours}"]`
   );
 
-  const timeLine = createTimeLine(currentDate.getMinutes());
+  const timeLine = createTimeLine(minutes);
   calendarTimeSlot && calendarTimeSlot.append(timeLine);
   
   timerId = setInterval(renderTimeLine, delayForNextRender);
