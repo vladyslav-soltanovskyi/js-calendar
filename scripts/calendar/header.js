@@ -2,7 +2,7 @@ import storage from '../common/storage.js';
 import { generateWeekRange } from '../common/time.utils.js';
 import { openModal } from '../common/modal.js';
 
-const daysOfWeek = ['sun', 'mon', 'tue', 'wed', 'thu', 'fri', 'sat'];
+const daysOfWeek = ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun'];
 const headerElem = document.querySelector('.calendar__header');
 const createEventButton = document.querySelector('.create-event-btn');
 

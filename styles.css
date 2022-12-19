@@ -4,7 +4,6 @@
   display: flex;
   flex-direction: column;
   position: relative;
-  overflow: auto;
 }
 
 .button {
@@ -85,36 +84,46 @@
   margin-left: 20px;
 }
 
-.calendar__header {
-  margin-left: 50px;
+.calendar {
   display: flex;
-  position: sticky;
-  top: 0;
-  z-index: 10;
-  background-color: #fff;
-  width: 910px;
+  flex-direction: column;
+  height: calc(100vh - 60px);
+}
+.calendar__header {
+  margin-left: 48px;
+  display: flex;
+  height: 100px;
+}
+.calendar__body {
+  display: flex;
+  overflow: auto;
 }
 .calendar__week {
   display: flex;
+  flex: 1;
 }
 .calendar__week-container {
   display: flex;
+  width: 100%;
+  height: fit-content;
 }
 .calendar__day {
-  flex: 0 0 130px;
-  border-left: 1px solid #dadce0;
+  flex: 1;
+  border-left: 1px solid #eee;
+  border-top: 1px solid #eee;
+}
+.calendar__day:last-child {
+  border-right: 1px solid #eee;
 }
 .calendar__time-slot {
   height: 60px;
   position: relative;
-}
-.calendar__time-slot:not(:last-child) {
-  border-bottom: 1px solid #dadce0;
+  border-bottom: 1px solid #eee;
 }
 
 .day-label {
   height: 100px;
-  flex: 0 0 130px;
+  flex: 1;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -136,21 +145,18 @@
 
 .calendar__time-scale {
   width: 48px;
-  position: sticky;
-  left: 0;
-  z-index: 10;
-  background-color: #fff;
+  height: 100%;
 }
 
 .time-slot {
   height: 60px;
+  width: 48px;
   position: relative;
 }
 .time-slot__time {
   position: relative;
   text-transform: uppercase;
   text-align: right;
-  top: -6px;
   font-size: 12px;
 }
 

@@ -1,21 +1,18 @@
 // стили боковой временной шкалы
 .calendar__time-scale {
   width: 48px;
-  position: sticky;
-  left: 0;
-  z-index: 10;
-  background-color: #fff;
+  height: 100%;
 }
 
 .time-slot {
   height: 60px;
+  width: 48px;
   position: relative;
 
   &__time {
     position: relative;
     text-transform: uppercase;
     text-align: right;
-    top: -6px;
     font-size: 12px;
   }
 }

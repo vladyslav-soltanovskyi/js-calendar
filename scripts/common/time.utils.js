@@ -12,6 +12,8 @@ export const getStartOfWeek = (date) => {
   return new Date(monday.getFullYear(), monday.getMonth(), monday.getDate());
 };
 
+export const getWeekStartDate = () => getStartOfWeek(new Date());
+
 // вернет массив из 7 дней, начиная и переданной даты
 export const generateWeekRange = (startDate) => {
   const result = [];
